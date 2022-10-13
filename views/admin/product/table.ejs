@@ -1,0 +1,86 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#add-modal"
+    >
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table
+        class="table table-bordered"
+        id="dataTable"
+        width="100%"
+        cellspacing="0"
+      >
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Sold</th>
+            <th>Item Image</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let i = 0; i < product.length; i++){ %>
+          <tr>
+            <td><%= i + 1 %></td>
+            <td><%= product[i].name %></td>
+            <td><%= product[i].brand %></td>
+            <td><%= product[i].price %></td>
+            <td><%= product[i].sold %></td>
+            <td>
+              <img
+                class="img-fluid"
+                src="<% process.env.BACKEND_URL %>/<%= product[i].imageUrl %>"
+                alt="imageUrl"
+                width="60px"
+              />
+            </td>
+            <td>
+              <form
+                action="/admin/product/<%= product[i].id %>?_method=DELETE"
+                method="POST"
+              >
+                <a
+                  href="javascript:void();"
+                  type="button"
+                  class="btn btn-warning btn-circle btn-sm button-update"
+                  data-id="<%= product[i].id %>"
+                  data-name="<%= product[i].name %>"
+                  data-brand="<%= product[i].brand %>"
+                  data-price="<%= product[i].price %>"
+                  ><i class="fas fa-edit"></i
+                ></a>
+                <button type="submit" class="btn btn-danger btn-circle btn-sm">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Sold</th>
+            <th>Item Image</th>
+            <th>Action</th>
+          </tr>
+        </tfoot>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>

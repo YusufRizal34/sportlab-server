@@ -1,0 +1,28 @@
+GET http://localhost:3001/api/v1/member/landing-page
+
+###
+
+GET http://localhost:3001/api/v1/member/token
+
+###
+
+GET http://localhost:3001/api/v1/member/profile-page
+
+###
+
+GET http://localhost:3001/api/v1/member/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyU3BlY0F0dHJpYnV0ZSI6eyJfaWQiOiI2MzJkYjk2MjIyZmQ2ZjIyMDgwNDg5MzgiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4ifSwiaWF0IjoxNjY1MjAzOTI1LCJleHAiOjE2NjUyMDM5NDV9.p1zr0ubo__-qpHYGhJ6AqdKNtOzkm21MSqrky9IcOx0
+
+###
+
+POST http://localhost:3001/api/v1/member/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "admin123"
+}
+
+###
+
+DELETE http://localhost:3001/api/v1/member/logout

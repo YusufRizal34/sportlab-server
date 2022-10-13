@@ -1,0 +1,55 @@
+<form method="POST" action="/admin/user/register">
+  <div class="form-group">
+    <label class="form-label">Username</label>
+    <input
+      type="text"
+      class="form-control"
+      name="username"
+      placeholder="Enter username"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label class="form-label">Email</label>
+    <input
+      type="text"
+      class="form-control"
+      name="email"
+      placeholder="Enter email"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      placeholder="Enter Password"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label class="form-label">Confirm Password</label>
+    <input
+      type="password"
+      class="form-control"
+      name="confirmPassword"
+      placeholder="Enter Confirmation Password"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label>
+      <input type="checkbox" name="agreement" required />
+      I agree all statements in
+      <span class="text-decoration-underline">Terms of service</span>
+    </label>
+  </div>
+  <%- include('../../../partials/message.ejs') %>
+
+  <button type="submit" class="btn btn-primary btn-user btn-block">
+    Login
+  </button>
+</form>
